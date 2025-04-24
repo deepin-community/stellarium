@@ -1,0 +1,8 @@
+version=4
+
+# Base on bugs.debian.org/1019696.
+
+opts="pgpsigurlmangle=s/$/.asc/,\
+  downloadurlmangle=s%archive/refs/tags/v([\d\.]+).tar.gz%releases/download/v$1/stellarium-$1.tar.gz%" \
+  https://github.com/stellarium/stellarium/tags \
+  /Stellarium/stellarium/archive/refs/tags/v([\d\.]+)\.tar\.gz
